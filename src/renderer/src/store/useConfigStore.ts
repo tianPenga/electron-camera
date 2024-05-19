@@ -7,7 +7,7 @@ export const useConfigStore = defineStore('config', () => {
         deviceId: '',
         borderWidth:'3px',
         borderColor:'#616161',
-        rounded:false
+        rounded:'圆'
     })
     
     return { config}

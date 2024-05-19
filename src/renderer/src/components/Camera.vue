@@ -28,9 +28,9 @@ onMounted(() => {
 
 <template>
     <main class="w-screen h-screen overflow-hidden"
-    :class="{'rounded-full':config.rounded}"
+    :class="{'rounded-full':config.rounded=='圆'}"
     :style="`border:solid ${config.borderWidth} ${config.borderColor}`">
-        <video class="object-cover h-screen" :class="{'rounded-full':config.rounded}"></video>
+        <video class="object-cover h-screen" :class="{'rounded-full':config.rounded=='圆'}"></video>
     </main>
 </template>
 

@@ -3,12 +3,18 @@ import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
 const api = {
-  quit:()=>{
-    ipcRenderer.send('quit')
+  contextmenu:()=>{
+    ipcRenderer.send('contextmenu')
   },
-  drag:(opt:{x:number,y:number})=>{
-    ipcRenderer.invoke('drag',opt)
+  setting:(callback)=>{
+    ipcRenderer.on('setting',(event,value:any)=>{
+      callback(value)
+    })
   }
+  // drag:(opt:{x:number,y:number})=>{
+  //   ipcRenderer.invoke('drag',opt)
+  // },
+
 }
 
 // Use `contextBridge` APIs to expose Electron APIs to

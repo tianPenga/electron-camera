@@ -11,14 +11,16 @@ const { config } = useConfigStore()
 
 <template>
     <main class="bg-[#2c3e50] w-screen h-screen p-5 py-10">
-        <h2 class="text-gray-100 text-center text-sm mb-5 opacity-70">参数设置</h2>
+        <h2 class="text-gray-400 text-center text-sm/5 opacity-70">返回摄像头</h2>
+        <h2 class="text-gray-100 text-center text-sm my-2 opacity-70">参数设置</h2>
         <el-form ref="form" label-width="80px" :inline="false" size="large" label-position="top">
             <el-select v-model="config.deviceId" placeholder="请选择摄像头" clearable filterable>
                 <el-option v-for="item of cameras" :key="item.deviceId" :label="item.label" :value="item.deviceId">
                 </el-option>
             </el-select>
-            <el-input v-model="config.borderWidth" placeholder="边框宽度" size="large" clearable class="py-5"></el-input>
-            <el-input v-model="config.borderColor" placeholder="边框颜色" size="large" clearable></el-input>
+            <el-input v-model="config.borderWidth" placeholder="边框宽度" size="middel" clearable class="mt-2"></el-input>
+            <el-input v-model="config.borderColor" placeholder="边框颜色" size="middle" clearable class="mt-2"></el-input>
+            <el-input v-model="config.rounded" placeholder="摄像头形状" size="middle" clearable class="mt-2"></el-input>
             <!-- <el-button type="success" @click="updateConfig()" size="large" class="w-[100%]">保存</el-button> -->
         </el-form>
         <h2  class="mt-6 text-center text-sm text-gray-300 cursor-pointer">electron技术作品</h2>

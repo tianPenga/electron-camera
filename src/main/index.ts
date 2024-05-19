@@ -4,7 +4,7 @@ import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import myIcon from '../../resources/window.png?asset'
 import './ipcMain'
-import './drag'
+// import './drag'
 import createTray from './tray'
 function createWindow(): void {
   // Create the browser window.
@@ -18,7 +18,8 @@ function createWindow(): void {
     show: false,
     x:1200,
     y:150,
-    // skipTaskbar:true,  //让任务栏图标消失,但是没起作用
+    movable:true,
+    // skipTaskbar:true,  //让任务栏图标消失
     autoHideMenuBar: true,
     frame:false,
     transparent:true,   //透明
@@ -30,6 +31,9 @@ function createWindow(): void {
     }
   })
   
+   // 托盘图标
+   createTray(mainWindow)
+
   mainWindow.setAspectRatio(1)
   if(is.dev) mainWindow.webContents.openDevTools()  //生产环境要关掉，这对象对任务栏图标现实有影响
   mainWindow.on('ready-to-show', () => {
@@ -69,8 +73,6 @@ app.whenReady().then(() => {
 
   createWindow()
 
-  // 托盘图标
-  createTray()
 
   app.on('activate', function () {
     // On macOS it's common to re-create a window in the app when the

@@ -3,18 +3,23 @@
     margin: 0;
     box-sizing: border-box;
 }
-// html{
-//     -webkit-app-region:drag;
-// }
-// textarea{
-//     -webkit-app-region:no-drag;
-// }
-// form{
-//     -webkit-app-region:no-drag;   
-// }
-// span{
-//     -webkit-app-region:no-drag;   
-// }
+
+html{
+    -webkit-app-region:drag;
+}
+textarea{
+    -webkit-app-region:no-drag;
+}
+form{
+    -webkit-app-region:no-drag;   
+}
+span{
+    -webkit-app-region:no-drag;   
+}
 // video{
 //         -webkit-app-region:no-drag;
 // }
+
+.drag{
+    -webkit-app-region:drag !important;
+}
