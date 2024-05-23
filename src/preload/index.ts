@@ -1,4 +1,4 @@
-import { contextBridge, ipcRenderer } from 'electron'
+import { contextBridge, ipcRenderer, IpcRendererEvent } from 'electron'
 import { electronAPI } from '@electron-toolkit/preload'
 
 // Custom APIs for renderer
@@ -7,7 +7,8 @@ const api = {
     ipcRenderer.send('contextmenu')
   },
   setting:(callback)=>{
-    ipcRenderer.on('setting',(event,value:any)=>{
+    //@ts-ignore
+    ipcRenderer.on('setting',(event:IpcRendererEvent,value:any)=>{
       callback(value)
     })
   }

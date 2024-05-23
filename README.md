@@ -1,6 +1,6 @@
 # camera
 
-An Electron application with Vue and TypeScript
+一个使用Electron-vite进行开发的桌面端摄像头软件
 
 ## Recommended IDE Setup
 

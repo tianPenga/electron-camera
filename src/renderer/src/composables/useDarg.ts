@@ -8,9 +8,7 @@ class Drag {
     public run() {
         window.addEventListener('DOMContentLoaded', () => {
             this.body = document.querySelector('body')!
-
             this.body.addEventListener('mousedown',this.mouseDwon.bind(this)) //使用bind把this指向Drag类实例，而不是body
-
         })
     }
 
@@ -36,7 +34,6 @@ class Drag {
         const x=event.pageX-this.pageX;
         const y=event.pageY-this.pageY;
         window.api.drag({x,y})
-        console.log(this.body?.clientWidth);
     }
 }
 

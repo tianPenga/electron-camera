@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Camera from '@renderer/components/Camera.vue'
 import Setting from '@renderer/components/Setting.vue';
-import { Setting as settingIcon, CameraOne, Round } from '@icon-park/vue-next';
+import { Setting as  CameraOne } from '@icon-park/vue-next';
 import { useConfigStore } from './store/useConfigStore';
 // import useDrag  from './composables/useDarg'
 // 拖拽窗口
